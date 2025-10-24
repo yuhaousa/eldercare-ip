@@ -57,6 +57,12 @@ export function Header() {
               >
                 科研管理
               </Link>
+              <Link
+                href="/achievements"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                成果展示
+              </Link>
             </nav>
           </div>
 
@@ -110,6 +116,12 @@ export function Header() {
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 科研管理
+              </Link>
+              <Link
+                href="/achievements"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                成果展示
               </Link>
               <div className="flex flex-col gap-2 pt-2">
                 <Button variant="ghost" size="sm">
