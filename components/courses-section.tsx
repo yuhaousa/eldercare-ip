@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Brain, Dumbbell, Heart, Shield, Globe } from "lucide-react"
+import { Brain, Dumbbell, Heart, Shield, Globe, Cpu } from "lucide-react"
 
 const courses = [
   {
@@ -48,11 +48,20 @@ const courses = [
     color: "chart-4",
     image: "/international-healthcare-standards-global-nursing-.jpg",
   },
+  {
+    icon: Cpu,
+    title: "AI与智能养老技术",
+    description: "人工智能应用、物联网设备、大数据分析",
+    practice: "智能设备操作、数据平台实训",
+    tech: "AI健康预测 + 智能监护系统",
+    color: "chart-5",
+    image: "/ai-artificial-intelligence-elderly-care-smart-tech.jpg",
+  },
 ]
 
 export function CoursesSection() {
   return (
-    <section id="courses" className="py-20 sm:py-32 bg-secondary/20">
+    <section id="courses" className="py-12 sm:py-16 bg-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">课程体系设计</h2>
@@ -61,7 +70,7 @@ export function CoursesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((course, index) => {
             const Icon = course.icon
             return (

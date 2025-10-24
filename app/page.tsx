@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { PlatformOverview } from "@/components/platform-overview"
 import { CoursesSection } from "@/components/courses-section"
 import { ResearchSection } from "@/components/research-section"
+import { CtaSection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
         <PlatformOverview />
         <CoursesSection />
         <ResearchSection />
+        <CtaSection />
       </main>
       <Footer />
     </div>

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Footprints, Dna, Users, BarChart, Globe2 } from "lucide-react"
+import { Footprints, Dna, Users, BarChart, Globe2, Cpu } from "lucide-react"
 
 const researchProjects = [
   {
@@ -37,11 +37,18 @@ const researchProjects = [
     outcomes: "联合出版物、标准化认证路径研究",
     color: "chart-4",
   },
+  {
+    icon: Cpu,
+    title: "智慧养老设备研发",
+    collaboration: "工程学院 + 科技企业",
+    outcomes: "智能监测设备原型、IoT平台架构",
+    color: "chart-5",
+  },
 ]
 
 export function ResearchSection() {
   return (
-    <section id="research" className="py-20 sm:py-32">
+    <section id="research" className="py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">科研与创新项目</h2>
@@ -71,7 +78,7 @@ export function ResearchSection() {
           })}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 p-8 border border-primary/20">
             <div className="text-4xl font-bold text-primary mb-2">15+</div>
             <div className="text-sm font-medium text-foreground">科研项目</div>
@@ -88,6 +95,12 @@ export function ResearchSection() {
             <div className="text-4xl font-bold text-chart-2 mb-2">50+</div>
             <div className="text-sm font-medium text-foreground">研究成果</div>
             <div className="text-xs text-muted-foreground mt-1">论文与专利</div>
+          </div>
+
+          <div className="rounded-xl bg-gradient-to-br from-chart-5/10 to-chart-5/5 p-8 border border-chart-5/20">
+            <div className="text-4xl font-bold text-chart-5 mb-2">6+</div>
+            <div className="text-sm font-medium text-foreground">智慧养老设备研发</div>
+            <div className="text-xs text-muted-foreground mt-1">工程学院与科技企业</div>
           </div>
         </div>
       </div>

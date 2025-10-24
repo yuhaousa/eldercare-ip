@@ -3,7 +3,7 @@ import { GraduationCap, Building2, Cpu, Target } from "lucide-react"
 
 export function PlatformOverview() {
   return (
-    <section id="platform" className="py-20 sm:py-32">
+    <section id="platform" className="py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">平台愿景与目标</h2>
