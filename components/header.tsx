@@ -17,7 +17,7 @@ export function Header() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <span className="text-xl font-bold text-primary-foreground">智</span>
               </div>
-              <span className="text-lg font-semibold text-foreground">智慧健康养老平台</span>
+              <span className="text-lg font-semibold text-foreground">新中智慧健康养老平台</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
@@ -34,6 +34,12 @@ export function Header() {
                 课程中心
               </Link>
               <Link
+                href="/news"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                平台动态
+              </Link>
+              <Link
                 href="/learning-dashboard"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -43,7 +49,7 @@ export function Header() {
                 href="/health-monitoring"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                健康监测
+                我的健康
               </Link>
               <Link
                 href="/rehabilitation"
@@ -94,6 +100,12 @@ export function Header() {
                 课程中心
               </Link>
               <Link
+                href="/news"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                平台动态
+              </Link>
+              <Link
                 href="/learning-dashboard"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -103,7 +115,7 @@ export function Header() {
                 href="/health-monitoring"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                健康监测
+                我的健康
               </Link>
               <Link
                 href="/rehabilitation"

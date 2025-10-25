@@ -10,7 +10,7 @@ export function Footer() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <span className="text-xl font-bold text-primary-foreground">智</span>
               </div>
-              <span className="text-lg font-semibold text-foreground">智慧健康养老平台</span>
+              <span className="text-lg font-semibold text-foreground">新中智慧健康养老平台</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
               构建融合教育、科研与实践的智慧养老创新平台， 促进高校与养老机构协同育人，打造健康老龄化创新示范基地。

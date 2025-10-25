@@ -13,7 +13,7 @@ export default function HealthMonitoringPage() {
       <main className="py-12 sm:py-16 bg-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">健康监测中心</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">我的健康</h1>
             <p className="mt-2 text-muted-foreground">实时监测健康数据，智能分析健康趋势</p>
           </div>
 
