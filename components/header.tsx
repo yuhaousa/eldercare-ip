@@ -34,18 +34,6 @@ export function Header() {
                 课程中心
               </Link>
               <Link
-                href="/news"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                新中交流
-              </Link>
-              <Link
-                href="/learning-dashboard"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                学习中心
-              </Link>
-              <Link
                 href="/rehabilitation"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -62,6 +50,18 @@ export function Header() {
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 成果展示
+              </Link>
+              <Link
+                href="/news"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                新中交流
+              </Link>
+              <Link
+                href="/learning-dashboard"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                学习中心
               </Link>
             </nav>
           </div>
@@ -96,18 +96,6 @@ export function Header() {
                 课程中心
               </Link>
               <Link
-                href="/news"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                新中交流
-              </Link>
-              <Link
-                href="/learning-dashboard"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                学习中心
-              </Link>
-              <Link
                 href="/rehabilitation"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -124,6 +112,18 @@ export function Header() {
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 成果展示
+              </Link>
+              <Link
+                href="/news"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                新中交流
+              </Link>
+              <Link
+                href="/learning-dashboard"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                学习中心
               </Link>
               <div className="flex flex-col gap-2 pt-2">
                 <Button variant="ghost" size="sm">

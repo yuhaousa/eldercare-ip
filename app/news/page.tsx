@@ -1,7 +1,5 @@
 "use client"
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -232,164 +230,150 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <Badge className="mb-4">Platform Updates</Badge>
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">新中交流</h1>
-              <p className="text-lg text-muted-foreground">了解新中智慧健康养老平台的最新动态、政策解读与成果发布</p>
-            </div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Badge className="mb-4">Platform Updates</Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">新中交流</h1>
+            <p className="text-lg text-muted-foreground">了解新中智慧健康养老平台的最新动态、政策解读与成果发布</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Main Content */}
-        <section className="py-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Tabs defaultValue="news" className="w-full">
-              <TabsList className="grid w-full max-w-md grid-cols-3 mb-8">
-                <TabsTrigger value="news">平台新闻</TabsTrigger>
-                <TabsTrigger value="policies">政策法规</TabsTrigger>
-                <TabsTrigger value="achievements">成果发布</TabsTrigger>
-              </TabsList>
+      {/* Main Content */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Tabs defaultValue="news" className="w-full">
+            <TabsList className="grid w-full max-w-md grid-cols-3 mb-8">
+              <TabsTrigger value="news">平台新闻</TabsTrigger>
+              <TabsTrigger value="policies">政策法规</TabsTrigger>
+              <TabsTrigger value="achievements">成果发布</TabsTrigger>
+            </TabsList>
 
-              {/* News Tab */}
-              <TabsContent value="news" className="space-y-8">
-                {/* Featured News */}
-                {newsItems
-                  .filter((item) => item.featured)
-                  .map((item) => (
-                    <Card key={item.id} className="overflow-hidden">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="relative h-64 md:h-auto">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            fill
-                            className="object-cover"
-                          />
+            {/* News Tab */}
+            <TabsContent value="news" className="space-y-8">
+              {/* Featured News */}
+              {newsItems
+                .filter((item) => item.featured)
+                .map((item) => (
+                  <Card key={item.id} className="overflow-hidden">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="relative h-64 md:h-auto">
+                        <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                      </div>
+                      <div className="p-6 flex flex-col justify-center">
+                        <Badge className="w-fit mb-3">{item.category}</Badge>
+                        <h2 className="text-2xl font-bold mb-3">{item.title}</h2>
+                        <p className="text-muted-foreground mb-4">{item.excerpt}</p>
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            <span>{item.date}</span>
+                          </div>
                         </div>
-                        <div className="p-6 flex flex-col justify-center">
-                          <Badge className="w-fit mb-3">{item.category}</Badge>
-                          <h2 className="text-2xl font-bold mb-3">{item.title}</h2>
-                          <p className="text-muted-foreground mb-4">{item.excerpt}</p>
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                            <div className="flex items-center gap-1">
-                              <Calendar className="h-4 w-4" />
-                              <span>{item.date}</span>
-                            </div>
+                        <Link href={`/news/${item.id}`}>
+                          <Button>
+                            阅读全文 <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+
+              {/* News Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {newsItems
+                  .filter((item) => !item.featured)
+                  .map((item) => (
+                    <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                      <div className="relative h-48">
+                        <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                      </div>
+                      <div className="p-6">
+                        <Badge className="mb-3">{item.category}</Badge>
+                        <h3 className="text-lg font-semibold mb-2 line-clamp-2">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{item.excerpt}</p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            <span>{item.date}</span>
                           </div>
                           <Link href={`/news/${item.id}`}>
-                            <Button>
-                              阅读全文 <ArrowRight className="ml-2 h-4 w-4" />
+                            <Button variant="ghost" size="sm">
+                              查看详情
                             </Button>
                           </Link>
                         </div>
                       </div>
                     </Card>
                   ))}
+              </div>
+            </TabsContent>
 
-                {/* News Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {newsItems
-                    .filter((item) => !item.featured)
-                    .map((item) => (
-                      <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                        <div className="relative h-48">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <Badge className="mb-3">{item.category}</Badge>
-                          <h3 className="text-lg font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{item.excerpt}</p>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                              <Calendar className="h-4 w-4" />
-                              <span>{item.date}</span>
-                            </div>
-                            <Link href={`/news/${item.id}`}>
-                              <Button variant="ghost" size="sm">
-                                查看详情
-                              </Button>
-                            </Link>
-                          </div>
-                        </div>
-                      </Card>
-                    ))}
-                </div>
-              </TabsContent>
-
-              {/* Policies Tab */}
-              <TabsContent value="policies" className="space-y-4">
-                {policies.map((policy) => (
-                  <Card key={policy.id} className="p-6 hover:shadow-lg transition-shadow">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
-                        <FileText className="h-6 w-6 text-primary" />
+            {/* Policies Tab */}
+            <TabsContent value="policies" className="space-y-4">
+              {policies.map((policy) => (
+                <Card key={policy.id} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <FileText className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Badge variant="outline">{policy.level}</Badge>
+                        <span className="text-sm text-muted-foreground">{policy.source}</span>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge variant="outline">{policy.level}</Badge>
-                          <span className="text-sm text-muted-foreground">{policy.source}</span>
+                      <h3 className="text-lg font-semibold mb-2">{policy.title}</h3>
+                      <p className="text-muted-foreground mb-3">{policy.summary}</p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Calendar className="h-4 w-4" />
+                          <span>{policy.date}</span>
                         </div>
-                        <h3 className="text-lg font-semibold mb-2">{policy.title}</h3>
-                        <p className="text-muted-foreground mb-3">{policy.summary}</p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            <span>{policy.date}</span>
-                          </div>
-                          <Link href={`/news/policies/${policy.id}`}>
-                            <Button variant="ghost" size="sm">
-                              查看详情 <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </Link>
-                        </div>
+                        <Link href={`/news/policies/${policy.id}`}>
+                          <Button variant="ghost" size="sm">
+                            查看详情 <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
                       </div>
                     </div>
-                  </Card>
-                ))}
-              </TabsContent>
+                  </div>
+                </Card>
+              ))}
+            </TabsContent>
 
-              {/* Achievements Tab */}
-              <TabsContent value="achievements" className="space-y-4">
-                {achievements.map((achievement) => (
-                  <Card key={achievement.id} className="p-6 hover:shadow-lg transition-shadow">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10 flex-shrink-0">
-                        <Award className="h-6 w-6 text-secondary" />
+            {/* Achievements Tab */}
+            <TabsContent value="achievements" className="space-y-4">
+              {achievements.map((achievement) => (
+                <Card key={achievement.id} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10 flex-shrink-0">
+                      <Award className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Badge variant="secondary">{achievement.type}</Badge>
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Calendar className="h-4 w-4" />
+                          <span>{achievement.date}</span>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge variant="secondary">{achievement.type}</Badge>
-                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            <span>{achievement.date}</span>
-                          </div>
-                        </div>
-                        <h3 className="text-lg font-semibold mb-2">{achievement.title}</h3>
-                        <p className="text-muted-foreground mb-3">{achievement.description}</p>
-                        <div className="flex items-center gap-2 text-sm">
-                          <TrendingUp className="h-4 w-4 text-primary" />
-                          <span className="text-primary font-medium">{achievement.impact}</span>
-                        </div>
+                      <h3 className="text-lg font-semibold mb-2">{achievement.title}</h3>
+                      <p className="text-muted-foreground mb-3">{achievement.description}</p>
+                      <div className="flex items-center gap-2 text-sm">
+                        <TrendingUp className="h-4 w-4 text-primary" />
+                        <span className="text-primary font-medium">{achievement.impact}</span>
                       </div>
                     </div>
-                  </Card>
-                ))}
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
-      </main>
-      <Footer />
+                  </div>
+                </Card>
+              ))}
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
     </div>
   )
 }

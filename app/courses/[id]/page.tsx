@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { CourseDetail } from "@/components/course-detail"
 import { notFound } from "next/navigation"
 
@@ -64,12 +62,8 @@ export default function CourseDetailPage({ params }: { params: { id: string } })
   }
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <CourseDetail course={course} />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <CourseDetail course={course} />
+    </main>
   )
 }

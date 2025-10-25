@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -9,203 +7,192 @@ import Image from "next/image"
 
 export default function AchievementsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Page Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-foreground mb-4">成果展示</h1>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          展示平台在智慧健康与养老领域的研究成果、学术论文、专利技术及获奖荣誉
+        </p>
+      </div>
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">成果展示</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            展示平台在智慧健康与养老领域的研究成果、学术论文、专利技术及获奖荣誉
-          </p>
-        </div>
+      {/* Statistics Overview */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+        <Card className="p-6 text-center">
+          <FileText className="h-10 w-10 text-primary mx-auto mb-3" />
+          <div className="text-3xl font-bold text-foreground mb-1">50+</div>
+          <div className="text-sm text-muted-foreground">学术论文</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <Award className="h-10 w-10 text-primary mx-auto mb-3" />
+          <div className="text-3xl font-bold text-foreground mb-1">28</div>
+          <div className="text-sm text-muted-foreground">专利技术</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <Package className="h-10 w-10 text-primary mx-auto mb-3" />
+          <div className="text-3xl font-bold text-foreground mb-1">12</div>
+          <div className="text-sm text-muted-foreground">智能产品</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <Trophy className="h-10 w-10 text-primary mx-auto mb-3" />
+          <div className="text-3xl font-bold text-foreground mb-1">15</div>
+          <div className="text-sm text-muted-foreground">获奖荣誉</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <Users className="h-10 w-10 text-primary mx-auto mb-3" />
+          <div className="text-3xl font-bold text-foreground mb-1">30+</div>
+          <div className="text-sm text-muted-foreground">合作机构</div>
+        </Card>
+      </div>
 
-        {/* Statistics Overview */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-          <Card className="p-6 text-center">
-            <FileText className="h-10 w-10 text-primary mx-auto mb-3" />
-            <div className="text-3xl font-bold text-foreground mb-1">50+</div>
-            <div className="text-sm text-muted-foreground">学术论文</div>
-          </Card>
-          <Card className="p-6 text-center">
-            <Award className="h-10 w-10 text-primary mx-auto mb-3" />
-            <div className="text-3xl font-bold text-foreground mb-1">28</div>
-            <div className="text-sm text-muted-foreground">专利技术</div>
-          </Card>
-          <Card className="p-6 text-center">
-            <Package className="h-10 w-10 text-primary mx-auto mb-3" />
-            <div className="text-3xl font-bold text-foreground mb-1">12</div>
-            <div className="text-sm text-muted-foreground">智能产品</div>
-          </Card>
-          <Card className="p-6 text-center">
-            <Trophy className="h-10 w-10 text-primary mx-auto mb-3" />
-            <div className="text-3xl font-bold text-foreground mb-1">15</div>
-            <div className="text-sm text-muted-foreground">获奖荣誉</div>
-          </Card>
-          <Card className="p-6 text-center">
-            <Users className="h-10 w-10 text-primary mx-auto mb-3" />
-            <div className="text-3xl font-bold text-foreground mb-1">30+</div>
-            <div className="text-sm text-muted-foreground">合作机构</div>
-          </Card>
-        </div>
+      {/* Achievements Tabs */}
+      <Tabs defaultValue="papers" className="w-full">
+        <TabsList className="grid w-full grid-cols-5 mb-8">
+          <TabsTrigger value="papers">学术论文</TabsTrigger>
+          <TabsTrigger value="patents">专利技术</TabsTrigger>
+          <TabsTrigger value="products">产品展示</TabsTrigger>
+          <TabsTrigger value="awards">获奖荣誉</TabsTrigger>
+          <TabsTrigger value="projects">项目成果</TabsTrigger>
+        </TabsList>
 
-        {/* Achievements Tabs */}
-        <Tabs defaultValue="papers" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-8">
-            <TabsTrigger value="papers">学术论文</TabsTrigger>
-            <TabsTrigger value="patents">专利技术</TabsTrigger>
-            <TabsTrigger value="products">产品展示</TabsTrigger>
-            <TabsTrigger value="awards">获奖荣誉</TabsTrigger>
-            <TabsTrigger value="projects">项目成果</TabsTrigger>
-          </TabsList>
-
-          {/* Academic Papers */}
-          <TabsContent value="papers" className="space-y-4">
-            {papers.map((paper) => (
-              <Link key={paper.id} href={`/achievements/papers/${paper.id}`}>
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <FileText className="h-6 w-6 text-primary" />
-                      </div>
+        {/* Academic Papers */}
+        <TabsContent value="papers" className="space-y-4">
+          {papers.map((paper) => (
+            <Link key={paper.id} href={`/achievements/papers/${paper.id}`}>
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{paper.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{paper.authors}</p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                        <span>{paper.journal}</span>
-                        <span>•</span>
-                        <span>{paper.year}</span>
-                        <Badge variant="secondary">{paper.category}</Badge>
-                      </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{paper.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{paper.authors}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                      <span>{paper.journal}</span>
+                      <span>•</span>
+                      <span>{paper.year}</span>
+                      <Badge variant="secondary">{paper.category}</Badge>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </TabsContent>
+
+        {/* Patents */}
+        <TabsContent value="patents" className="space-y-4">
+          {patents.map((patent) => (
+            <Link key={patent.id} href={`/achievements/patents/${patent.id}`}>
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{patent.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{patent.inventors}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                      <span>专利号: {patent.number}</span>
+                      <span>•</span>
+                      <span>{patent.year}</span>
+                      <Badge variant="secondary">{patent.type}</Badge>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </TabsContent>
+
+        {/* Products */}
+        <TabsContent value="products">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <Link key={product.id} href={`/achievements/products/${product.id}`}>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
+                  <div className="relative h-48 w-full bg-muted">
+                    <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
+                      <Badge variant="secondary">{product.category}</Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{product.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.map((feature, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </Card>
               </Link>
             ))}
-          </TabsContent>
+          </div>
+        </TabsContent>
 
-          {/* Patents */}
-          <TabsContent value="patents" className="space-y-4">
-            {patents.map((patent) => (
-              <Link key={patent.id} href={`/achievements/patents/${patent.id}`}>
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Award className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{patent.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{patent.inventors}</p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                        <span>专利号: {patent.number}</span>
-                        <span>•</span>
-                        <span>{patent.year}</span>
-                        <Badge variant="secondary">{patent.type}</Badge>
-                      </div>
+        {/* Awards */}
+        <TabsContent value="awards" className="space-y-4">
+          {awards.map((award) => (
+            <Link key={award.id} href={`/achievements/awards/${award.id}`}>
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Trophy className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                </Card>
-              </Link>
-            ))}
-          </TabsContent>
-
-          {/* Products */}
-          <TabsContent value="products">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((product) => (
-                <Link key={product.id} href={`/achievements/products/${product.id}`}>
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
-                    <div className="relative h-48 w-full bg-muted">
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
-                        <Badge variant="secondary">{product.category}</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{product.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {product.features.map((feature, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {feature}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* Awards */}
-          <TabsContent value="awards" className="space-y-4">
-            {awards.map((award) => (
-              <Link key={award.id} href={`/achievements/awards/${award.id}`}>
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Trophy className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{award.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{award.recipient}</p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                        <span>{award.organization}</span>
-                        <span>•</span>
-                        <span>{award.year}</span>
-                        <Badge variant="secondary">{award.level}</Badge>
-                      </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{award.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{award.recipient}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                      <span>{award.organization}</span>
+                      <span>•</span>
+                      <span>{award.year}</span>
+                      <Badge variant="secondary">{award.level}</Badge>
                     </div>
                   </div>
-                </Card>
-              </Link>
-            ))}
-          </TabsContent>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </TabsContent>
 
-          {/* Project Results */}
-          <TabsContent value="projects" className="space-y-4">
-            {projectResults.map((project) => (
-              <Link key={project.id} href={`/achievements/projects/${project.id}`}>
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <TrendingUp className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                        <span>{project.institution}</span>
-                        <span>•</span>
-                        <span>{project.year}</span>
-                        <Badge variant="secondary">{project.status}</Badge>
-                      </div>
+        {/* Project Results */}
+        <TabsContent value="projects" className="space-y-4">
+          {projectResults.map((project) => (
+            <Link key={project.id} href={`/achievements/projects/${project.id}`}>
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <TrendingUp className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                </Card>
-              </Link>
-            ))}
-          </TabsContent>
-        </Tabs>
-      </main>
-
-      <Footer />
-    </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                      <span>{project.institution}</span>
+                      <span>•</span>
+                      <span>{project.year}</span>
+                      <Badge variant="secondary">{project.status}</Badge>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </TabsContent>
+      </Tabs>
+    </main>
   )
 }
 
