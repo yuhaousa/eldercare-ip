@@ -46,12 +46,6 @@ export function Header() {
                 学习中心
               </Link>
               <Link
-                href="/health-monitoring"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                我的健康
-              </Link>
-              <Link
                 href="/rehabilitation"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -76,7 +70,9 @@ export function Header() {
             <Button variant="ghost" size="sm">
               登录
             </Button>
-            <Button size="sm">立即体验</Button>
+            <Button size="sm" asChild>
+              <Link href="/health-monitoring">我的健康</Link>
+            </Button>
           </div>
 
           <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -112,12 +108,6 @@ export function Header() {
                 学习中心
               </Link>
               <Link
-                href="/health-monitoring"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                我的健康
-              </Link>
-              <Link
                 href="/rehabilitation"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -139,7 +129,9 @@ export function Header() {
                 <Button variant="ghost" size="sm">
                   登录
                 </Button>
-                <Button size="sm">立即体验</Button>
+                <Button size="sm" asChild>
+                  <Link href="/health-monitoring">我的健康</Link>
+                </Button>
               </div>
             </nav>
           </div>

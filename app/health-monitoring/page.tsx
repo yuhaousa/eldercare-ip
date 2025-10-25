@@ -5,6 +5,7 @@ import { VitalSignsMonitor } from "@/components/vital-signs-monitor"
 import { HealthTrends } from "@/components/health-trends"
 import { HealthAlerts } from "@/components/health-alerts"
 import { DeviceStatus } from "@/components/device-status"
+import { MedicalReports } from "@/components/medical-reports"
 
 export default function HealthMonitoringPage() {
   return (
@@ -28,6 +29,7 @@ export default function HealthMonitoringPage() {
           </div>
           <HealthTrends />
           <DeviceStatus />
+          <MedicalReports />
         </div>
       </main>
       <Footer />
