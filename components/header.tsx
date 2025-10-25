@@ -37,7 +37,7 @@ export function Header() {
                 href="/news"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                平台动态
+                新中交流
               </Link>
               <Link
                 href="/learning-dashboard"
@@ -99,7 +99,7 @@ export function Header() {
                 href="/news"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                平台动态
+                新中交流
               </Link>
               <Link
                 href="/learning-dashboard"

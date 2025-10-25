@@ -36,7 +36,7 @@ export function NewsPreview() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold mb-2">平台动态</h2>
+            <h2 className="text-3xl font-bold mb-2">新中交流</h2>
             <p className="text-muted-foreground">了解最新的平台新闻、政策与成果</p>
           </div>
           <Link href="/news">

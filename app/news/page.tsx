@@ -37,6 +37,46 @@ export default function NewsPage() {
       date: "2024-01-05",
       image: "/students-training-elderly-care-practice.jpg",
     },
+    {
+      id: 4,
+      title: "新加坡养老专家团队来访，深化中新养老服务合作",
+      excerpt: "新加坡国立大学养老研究中心专家团队访问平台，双方就智慧养老技术应用、人才培养等领域达成多项合作共识。",
+      category: "国际交流",
+      date: "2024-01-25",
+      image: "/singapore-experts-visiting-elderly-care-center.jpg",
+    },
+    {
+      id: 5,
+      title: "中新联合研发的智能护理机器人通过临床测试",
+      excerpt: "由中新两国科研团队联合研发的智能护理机器人在多家养老机构完成临床测试，获得老年人和护理人员一致好评。",
+      category: "技术创新",
+      date: "2024-01-22",
+      image: "/nursing-robot-assisting-elderly-person.jpg",
+    },
+    {
+      id: 6,
+      title: "平台举办首届中新智慧养老创新论坛",
+      excerpt: "来自中国和新加坡的200余位专家学者齐聚一堂，共同探讨智慧养老产业发展趋势和创新实践。",
+      category: "学术活动",
+      date: "2024-01-20",
+      image: "/conference-forum-elderly-care-innovation.jpg",
+    },
+    {
+      id: 7,
+      title: "中新养老服务标准化合作项目正式启动",
+      excerpt: "双方将共同制定智慧养老服务标准体系，推动中新养老服务标准互认，促进养老产业国际化发展。",
+      category: "标准制定",
+      date: "2024-01-18",
+      image: "/signing-ceremony-partnership-agreement.jpg",
+    },
+    {
+      id: 8,
+      title: "平台学生赴新加坡进行为期三个月的实习交流",
+      excerpt: "首批20名学生前往新加坡知名养老机构实习，学习国际先进的养老服务理念和管理经验。",
+      category: "人才培养",
+      date: "2024-01-15",
+      image: "/students-learning-in-singapore-elderly-care-facili.jpg",
+    },
   ]
 
   const policies = [
@@ -71,6 +111,38 @@ export default function NewsPage() {
       summary: "规范医养结合机构医疗卫生服务，提升服务质量，保障老年人健康权益。",
       date: "2024-01-08",
       source: "国家卫生健康委员会",
+      level: "国家级",
+    },
+    {
+      id: 5,
+      title: "关于深化中新双边养老服务合作的框架协议",
+      summary: "中新两国政府签署养老服务合作框架协议，在人才培养、技术交流、标准互认等方面开展全面合作。",
+      date: "2024-01-25",
+      source: "民政部",
+      level: "国家级",
+    },
+    {
+      id: 6,
+      title: "养老机构智能化改造补贴实施细则",
+      summary: "对养老机构进行智能化、信息化改造给予财政补贴，支持引进智能监测设备、康复训练系统等。",
+      date: "2024-01-22",
+      source: "财政部、民政部",
+      level: "国家级",
+    },
+    {
+      id: 7,
+      title: "智慧养老服务人才培养指导意见",
+      summary: "加强智慧养老服务人才培养，鼓励高校开设相关专业，推动校企合作，建立实训基地。",
+      date: "2024-01-15",
+      source: "教育部、民政部",
+      level: "国家级",
+    },
+    {
+      id: 8,
+      title: "老年人健康数据安全与隐私保护规范",
+      summary: "明确老年人健康数据采集、存储、使用的安全要求，保护老年人个人隐私和数据安全。",
+      date: "2024-01-10",
+      source: "国家网信办",
       level: "国家级",
     },
   ]
@@ -108,6 +180,54 @@ export default function NewsPage() {
       type: "国际合作",
       impact: "建立长期合作机制",
     },
+    {
+      id: 5,
+      title: "中新联合实验室成功研发智能睡眠监测系统",
+      description: "采用非接触式传感技术，实时监测老年人睡眠质量，及时发现睡眠障碍和健康风险。",
+      date: "2024-01-26",
+      type: "技术突破",
+      impact: "已在15家养老机构试点应用",
+    },
+    {
+      id: 6,
+      title: "平台培养的首批学生获新加坡养老机构高度认可",
+      description: "20名学生在新加坡实习期间表现优异，其中8名获得新加坡养老机构正式聘用邀请。",
+      date: "2024-01-24",
+      type: "人才培养",
+      impact: "就业率100%，平均薪资提升30%",
+    },
+    {
+      id: 7,
+      title: "智慧养老大数据平台正式上线运营",
+      description: "整合健康监测、康复训练、服务管理等多维度数据，为养老决策提供科学依据。",
+      date: "2024-01-20",
+      type: "平台建设",
+      impact: "接入30+养老机构，服务5000+老年人",
+    },
+    {
+      id: 8,
+      title: "中新养老服务质量评估体系通过专家论证",
+      description: "建立科学、系统的养老服务质量评估指标体系，推动养老服务标准化、规范化发展。",
+      date: "2024-01-16",
+      type: "标准制定",
+      impact: "将在全国范围内推广应用",
+    },
+    {
+      id: 9,
+      title: "平台科研团队在国际顶级期刊发表智慧养老研究论文",
+      description: "关于AI辅助老年认知障碍早期诊断的研究成果在《Nature Aging》发表，引起国际关注。",
+      date: "2024-01-12",
+      type: "学术成果",
+      impact: "被引用次数已超过50次",
+    },
+    {
+      id: 10,
+      title: "智能药物管理系统获得医疗器械注册证",
+      description: "自主研发的智能药物管理系统通过国家药监局审批，可实现用药提醒、剂量控制等功能。",
+      date: "2024-01-08",
+      type: "产品认证",
+      impact: "预计年内推广至100家养老机构",
+    },
   ]
 
   return (
@@ -119,7 +239,7 @@ export default function NewsPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <Badge className="mb-4">Platform Updates</Badge>
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">平台动态</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">新中交流</h1>
               <p className="text-lg text-muted-foreground">了解新中智慧健康养老平台的最新动态、政策解读与成果发布</p>
             </div>
           </div>
