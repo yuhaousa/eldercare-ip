@@ -31,7 +31,7 @@ export function Header() {
                 href="/courses"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                课程中心
+                课程学习
               </Link>
               <Link
                 href="/rehabilitation"
@@ -61,7 +61,7 @@ export function Header() {
                 href="/learning-dashboard"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                学习中心
+                学习空间
               </Link>
             </nav>
           </div>
@@ -93,7 +93,7 @@ export function Header() {
                 href="/courses"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                课程中心
+                课程学习
               </Link>
               <Link
                 href="/rehabilitation"
@@ -123,7 +123,7 @@ export function Header() {
                 href="/learning-dashboard"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                学习中心
+                学习空间
               </Link>
               <div className="flex flex-col gap-2 pt-2">
                 <Button variant="ghost" size="sm">
